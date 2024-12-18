@@ -12,10 +12,21 @@ bonjour("Marcel");
 
 // EXERCICE FONCTIONCALCUL
 function calcul(a, b) {
+    if (typeof a !== 'number' || typeof b !== 'number') throw "Erreur: les paramètres ne sont pas des nombres";
     return a * b + a + b;
 }
-console.log(calcul(2, 3));
-console.log(calcul("2", "3"));
+try {
+    console.log(calcul(2, 3));
+} catch (error) {
+    console.log(error);
+
+}
+try {
+    console.log(calcul(2, "3"));
+}
+catch (error) {
+    console.log(error);
+}
 
 // EXERCICE FONCTIONCONTROLETABLEAU
 function controleTableau(tab) {
@@ -26,23 +37,43 @@ console.log(controleTableau([1, "2", 3]));
 console.log(controleTableau([]));
 
 /// EXERCICE FONCTIONMOYENNE
-console.log("EXERCICE FONCTIONMOYENNE");
 
 function moyenne(tab) {
-    if (!Array.isArray(tab)) return "Erreur: le paramètre n'est pas un tableau";
-    if (tab.length === 0) return "Erreur: le tableau est vide";
-    if (!controleTableau(tab)) return "Erreur: le tableau contient des éléments qui ne sont pas des nombres";
+    if (!Array.isArray(tab)) throw "Erreur: le paramètre n'est pas un tableau";
+    if (tab.length === 0) throw "Erreur: le tableau est vide";
+    if (!controleTableau(tab)) throw "Erreur: le tableau contient des éléments qui ne sont pas des nombres";
     return tab.reduce((a, b) => a + b) / tab.length; {
 
     }
 }
-console.log(moyenne([1, 2, 3, 4, 5]));
-console.log(moyenne([]));
-console.log(moyenne("chaine"));
+
+try {
+    console.log(moyenne([1, 2, 3, 4, 5]));
+
+}
+catch (e) {
+    console.log(e);
+}
+try {
+
+    console.log(moyenne([]));
+
+}
+catch (e) {
+    console.log(e);
+}
+try {
+
+    console.log(moyenne("chaine"));
+}
+catch (e) {
+    console.log(e);
+}
+
 
 // EXERCICE FONCTIONMAJ
 function majuscule(str) {
-    if (typeof str !== 'string') return "Erreur: le paramètre n'est pas une chaine de caractères";
+    if (typeof str !== 'string') throw "Erreur: le paramètre n'est pas une chaine de caractères";
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 console.log(majuscule("bonjour"));
@@ -50,10 +81,13 @@ console.log(majuscule("bonjour"));
 // EXERCICE FONCTIONPHRASEMAJ
 
 function phraseMaj(str) {
-    if (typeof str !== 'string') return "Erreur: le paramètre n'est pas une chaine de caractères";
+    if (typeof str !== 'string') throw "Erreur: le paramètre n'est pas une chaine de caractères";
     return str.split(' ').map(majuscule).join(' ');
 }
-console.log(phraseMaj("bonjour tout le monde"));
+try {
+    console.log(phraseMaj("bonjour tout le monde"));
+} catch (e) { console.log(e); }
+
 
 // EXERCICE FONCTION QUI RETOURNE UNE FONCTION
 
