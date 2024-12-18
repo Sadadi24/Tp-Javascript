@@ -29,7 +29,7 @@ console.log(controleTableau([]));
 console.log("EXERCICE FONCTIONMOYENNE");
 
 function moyenne(tab) {
-    if (typeof tab === 'string') return "Erreur: le paramètre n'est pas un tableau";
+    if (!Array.isArray(tab)) return "Erreur: le paramètre n'est pas un tableau";
     if (tab.length === 0) return "Erreur: le tableau est vide";
     if (!controleTableau(tab)) return "Erreur: le tableau contient des éléments qui ne sont pas des nombres";
     return tab.reduce((a, b) => a + b) / tab.length; {
@@ -92,3 +92,5 @@ gestionnaire.ajouterTache("Faire les courses");
 gestionnaire.ajouterTache("Nettoyer la maison");
 gestionnaire.terminerTache(0);
 gestionnaire.afficherTaches();
+
+
