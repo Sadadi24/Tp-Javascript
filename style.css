@@ -1,0 +1,12 @@
+td {
+    border-top: 1px solid rgba(220, 220, 220, 0.774);
+    border-bottom: 1px solid rgba(220, 220, 220, 0.774);
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table {
+    width: 70%;
+    border-bottom: 1px solid rgba(220, 220, 220, 0.774);
+    border-collapse: collapse;
+}

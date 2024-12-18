@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function calculate() {
+            const num1 = document.getElementById('number1').value;
+            const num2 = document.getElementById('number2').value;
+            const operator = document.getElementById('operator').value;
+            const resultDiv = document.getElementById('result');
+
+            if (isNaN(num1) || isNaN(num2)) {
+                resultDiv.innerHTML = '<span style="color: red;">Vous devez saisir un nombre</span>';
+                return;
+            }
+
+            const number1 = parseFloat(num1);
+            const number2 = parseFloat(num2);
+            let result;
+
+            switch (operator) {
+                case '+':
+                    result = number1 + number2;
+                    resultDiv.innerHTML = `Le résultat de l'addition est : ${result}`;
+                    break;
+                case '-':
+                    result = number1 - number2;
+                    resultDiv.innerHTML = `Le résultat de la soustraction est : ${result}`;
+                    break;
+                case '*':
+                    result = number1 * number2;
+                    resultDiv.innerHTML = `Le résultat de la multiplication est : ${result}`;
+                    break;
+                case '/':
+                    result = number1 / number2;
+                    resultDiv.innerHTML = `Le résultat de la division est : ${result}`;
+                    break;
+            }
+        }
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="number1" placeholder="Entrez le premier nombre">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" id="number2" placeholder="Entrez le deuxième nombre">
+        <button onclick="calculate()">Calculer</button>
+    </div>
+    <div id="result"></div>
+
+
+</body>
+
+</html>

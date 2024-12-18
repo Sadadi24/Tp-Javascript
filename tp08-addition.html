@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function calculateSum() {
+            const num1 = document.querySelector('#number1').value;
+            const num2 = document.querySelector('#number2').value;
+            const resultDiv = document.querySelector('#resultat');
+
+            if (isNaN(num1) || isNaN(num2) || num1 === '' || num2 === '') {
+                resultDiv.innerHTML = '<span style="color: red;">Vous devez saisir un nombre</span>';
+            } else {
+                const sum = parseFloat(num1) + parseFloat(num2);
+                resultDiv.innerHTML = `Le résultat de l’addition est : ${sum}`;
+            }
+        }
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <label for="number1">Nombre 1:</label>
+        <input type="text" id="number1">
+    </div>
+    <div>
+        <label for="number2">Nombre 2:</label>
+        <input type="text" id="number2">
+    </div>
+    <button onclick="calculateSum()">Calculer</button>
+    <div id="resultat"></div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function validateForm() {
+            var lastName = document.getElementById('lastName').value;
+            var firstName = document.getElementById('firstName').value;
+            var birthDate = document.getElementById('birthDate').value;
+            var errorMessage = document.getElementById('errorMessage');
+
+            if (!lastName || !firstName || !birthDate) {
+                errorMessage.style.display = 'block';
+                errorMessage.textContent = 'Tous les champs doivent être renseignés.';
+            } else {
+                errorMessage.style.display = 'none';
+                alert('Formulaire soumis avec succès!');
+            }
+        }
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="userForm">
+        <label for="lastName">Nom:</label>
+        <input type="text" id="lastName" name="lastName"><br><br>
+        <label for="firstName">Prénom:</label>
+        <input type="text" id="firstName" name="firstName"><br><br>
+        <label for="birthDate">Date de naissance:</label>
+        <input type="date" id="birthDate" name="birthDate"><br><br>
+        <button type="button" onclick="validateForm()">Valider</button>
+    </form>
+    <div id="errorMessage" style="color: white; background-color: red; display: none;"></div>
+
+
+</body>
+
+</html>
