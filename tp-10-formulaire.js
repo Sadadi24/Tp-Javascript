@@ -12,9 +12,7 @@ async function calculateSum(dataPays) {
         return [];
     }
     const newData = dataPays;
-
     newData.pays = newData.pays.filter(pays => pays.valeur >= min && pays.valeur <= max);
-
     return newData;
 }
 
